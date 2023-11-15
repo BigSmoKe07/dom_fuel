@@ -1,6 +1,6 @@
 local Inventory = exports.ox_inventory
 local Target = exports.ox_target
-
+ESX = exports["es_extended"]:getSharedObject()
 GlobalState.Database = false
 
 -- Gets identifier to check if player can open owner menu
@@ -54,7 +54,7 @@ local function StartDataBaseTimer(result)
                     {query = "UPDATE dom_fuel SET Price = ? WHERE GasStation = ?", values = {GlobalState[result[i].GasStation].price, result[i].GasStation}}
                 }
                 MySQL.transaction(queries, function(success)
-                    if success then print('Updated dom_fuel database') else print('Couldn\'t update databse') end 
+                    if not success then print('Couldn\'t update databse') end 
                 end)
         end 
     end 
@@ -80,6 +80,7 @@ RegisterNetEvent('dom_fuel:GrabStationOwnership', function()
         end 
     end)
 end)
+
 
 -- Updates owner name and id in database
 RegisterNetEvent('dom_fuel:UpdateOwner', function(input, result)
@@ -130,14 +131,40 @@ end
 
 -- Pay for fuel 
 RegisterNetEvent('dom_fuel:pay', function(price, fuel ,netId, station)
-    if not PayForFuel(source, price) then return end
-    
+    if not Inventory:CanCarryItem(source, 'WEAPON_PETROLCAN', 1) then
+        return TriggerClientEvent('ox_lib:notify', source, {
+            type = 'error',
+            description = 'You cannot carry this fuel can',
+        })
+    end
+    if not PayForFuel(source, price) then return end 
     fuel = math.floor(fuel)
+    if netId == 'gascan' then
+		Inventory:AddItem(source, 'WEAPON_PETROLCAN', 1)
 
-    setFuelState(netId, fuel)
+		TriggerClientEvent('ox_lib:notify', source, {
+			type = 'success',
+			description = ('Paid $%s for a fuel can'):format(price),
+		})
+    elseif netId == "refill" then 
+        local item = Inventory:GetCurrentWeapon(source)
+
+		if not item or item.name ~= 'WEAPON_PETROLCAN' then return end
+
+		item.metadata.durability = 100
+		item.metadata.ammo = 100
+
+		Inventory:SetMetadata(source, item.slot, item.metadata)
+
+		TriggerClientEvent('ox_lib:notify', source, {
+			type = 'success',
+			description = ("Paid $%s for refilling your fuel can"):format(price)
+		})
+    else 
+        setFuelState(netId, fuel)
+        lib.notify(source, {description = 'You have filled up your car', type = 'success'})
+    end 
     GlobalState[station] = {name = station, gas = (GlobalState[station].gas - fuel), money = (GlobalState[station].money + price), price = GlobalState[station].price}
-
-    lib.notify(source, {description = 'You have filled up your car', type = 'success'})
 end)
 
 -- Creates vehicle fuel statebagd
@@ -172,3 +199,4 @@ RegisterCommand('admingasstationmenu', function(source)
         TriggerClientEvent('dom_fuel:admingasstationmenu', source)
     else return end
 end, true)
+

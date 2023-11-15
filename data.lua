@@ -4,7 +4,7 @@ Data = {}
 Data.Stations = {
     -- Los Santos
     {
-        name = 'Grove Street', 
+        name = '9094', 
         coords = vec3(-71.28, -1761.16, 29.48),
         ownerMenu = vec3(-44.82536315918, -1748.8645019531, 29.520580291748),
         pumps = {
@@ -17,7 +17,7 @@ Data.Stations = {
         }
     },
     {
-        name = 'Strawberry Ave', 
+        name = '9051', 
         coords = vec3(264.74, -1260.98, 29.18),
         ownerMenu = vec3(294.61669921875, -1252.2253417969, 29.635862350464),
         pumps = {
@@ -33,7 +33,7 @@ Data.Stations = {
         }
     },
     {
-        name = 'El Rancho Blvd', 
+        name = '9330', 
         coords = vec3(1208.66, -1402.64, 35.22),
         ownerMenu = vec3(1211.1690673828, -1388.5452880859, 35.453594207764),
         pumps = {
@@ -44,7 +44,7 @@ Data.Stations = {
         }
     },
     {
-        name = 'Popular St', 
+        name = '8194', 
         coords = vec3(818.83, -1029.89, 26.17),
         ownerMenu = vec3(818.19366455078, -1041.3728027344, 26.926895141602),
         pumps = {
@@ -57,7 +57,7 @@ Data.Stations = {
         }
     },
     {
-        name = 'Mirror Park Blvd', 
+        name = '7302', 
         coords = vec3(1181.27, -329.57, 69.18),
         ownerMenu = vec3(1158.9816894531, -315.4065246582, 69.323364257813),
         pumps = {
@@ -70,7 +70,7 @@ Data.Stations = {
         }
     },
     {
-        name = 'Clinton Ave', 
+        name = '7286', 
         coords = vec3(621.07, 269.52, 103.04),
         ownerMenu = vec3(642.72613525391, 260.19180297852, 103.38906097412),
         pumps = {
@@ -94,7 +94,7 @@ Data.Stations = {
         }
     },
     {
-        name = 'West Eclipse Blvd', 
+        name = '7001', 
         coords = vec3(-2096.6, -318.15, 13.02),
         ownerMenu = vec3(-2066.4147949219, -313.19900512695, 13.406594276428),
         pumps = {
@@ -110,7 +110,7 @@ Data.Stations = {
         }
     },
     {
-        name = 'North Rockford Dr - 2', 
+        name = '5016', 
         coords = vec3(-1799.03, 803.11, 138.4),
         ownerMenu = vec3(-1828.8859863281, 797.32214355469, 138.31483459473),
         pumps = {
@@ -138,7 +138,7 @@ Data.Stations = {
         }
     },
     {
-        name = 'Palomino Freeway', 
+        name = '7354', 
         coords = vec3(2581.56, 361.65, 108.46),
         ownerMenu = vec3(2558.7883300781, 373.79321289063, 108.88616943359),
         pumps = {
@@ -175,7 +175,7 @@ Data.Stations = {
         }
     },
     {
-        name = 'Lindsay Circus', 
+        name = '8140', 
         coords = vec3(-723.72, -935.51, 19.21),
         ownerMenu = vec3(-710.4853515625, -905.43548583984, 19.352031707764),
         pumps = {
@@ -188,9 +188,9 @@ Data.Stations = {
         }
     },
 
-    -- Blaine County
+    -- -- Blaine County
     {
-        name = 'Route 68 - 1', 
+        name = '5011', 
         coords = vec3(-2555.31, 2334.01, 33.06),
         ownerMenu = vec3(-2544.0556640625, 2315.435546875, 33.417205810547),
         pumps = {
@@ -221,7 +221,7 @@ Data.Stations = {
         }
     },
     {
-        name = 'Route 68 - 4', 
+        name = '4023', 
         coords = vec3(1039.34, 2671.78, 39.55),
         ownerMenu = vec3(1039.3198242188, 2663.87890625, 39.703800201416),
         pumps = {
@@ -250,7 +250,7 @@ Data.Stations = {
         }
     },
     {
-        name = 'Senora Freeway', 
+        name = '3051', 
         coords = vec3(2680.01, 3265.0, 55.24),
         ownerMenu = vec3(2672.8752441406, 3288.1184082031, 55.358745574951),
         pumps = {
@@ -259,7 +259,7 @@ Data.Stations = {
         }
     },
     {
-        name = 'Alhambra Dr', 
+        name = '3008', 
         coords = vec3(2005.07, 3774.33, 32.18),
         ownerMenu = vec3(2001.3001708984, 3780.12109375, 32.393573760986),
         pumps = {
@@ -300,7 +300,7 @@ Data.Stations = {
         }
     },
     {
-        name = 'Great Ocean Hwy - 2', 
+        name = '1012', 
         coords = vec3(179.94, 6602.6, 31.85),
         ownerMenu = vec3(180.59001159668, 6600.2006835938, 32.051338195801),
         pumps = {
